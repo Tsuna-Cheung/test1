@@ -3,53 +3,39 @@
 <head>  
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!--
      <script src="jquery-mobile/jquery-2.0.0.min.js"></script>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <script src="js/bootstrap.js" type="application/javascript"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script src="jquery-mobile/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
 	<link href="jquery-mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
-    <script src="BaiDuMap.js" type="application/javascript"></script>
--->
-    <link href="index.css" rel="stylesheet">
 <title>Hello, World</title>  
-<style type="text/css">  
-html{height:100%}  
-body{height:100%;margin:0px;padding:0px}  
-#container{height:100%}  
-</style>  
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=xNlF0IAkpYfaVMtS9T6HG8UlsG6lQdgo">
-//v3.0版本的引用方式：src="http://api.map.baidu.com/api?v=3.0&ak=您的密钥"
-</script>
+
 </head>  
  
 <body>  
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
 
-        <div id="Mcontainer"></div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Features</h4>
+      </div>
+      <div class="modal-body">
+         <p>Mauris ipsum neque, facilisis id cursus vitae, fermentum ac elit. Nam at augue mi. Maecenas et sagittis nunc, nec efficitur ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi et posuere erat, nec ultrices leo. Pellentesque nulla lectus, sodales vitae aliquet at, volutpat bibendum metus. Maecenas tincidunt odio tincidunt ante efficitur, vel vehicula enim maximus. Nulla quis ipsum at mauris posuere porta commodo non est. Proin ut felis tortor. Duis et erat augue. Maecenas euismod facilisis rutrum. Nulla eleifend magna sapien, sit amet rutrum ipsum tempor ac. Nunc tortor ligula, eleifend sed neque vel, pharetra aliquet tellus. Integer tincidunt mi ut sapien lacinia congue.</p>
     
-<script>
-var map = new BMap.Map("Mcontainer");
-// 创建地图实例  
-var point = new BMap.Point(116.404, 39.915);
-// 创建点坐标  
-map.centerAndZoom(point, 15);
-    
-var geolocation = new BMap.Geolocation();
-// 开启SDK辅助定位
-geolocation.enableSDKLocation();
-geolocation.getCurrentPosition(function(r){
-	if(this.getStatus() == BMAP_STATUS_SUCCESS){
-		var mk = new BMap.Marker(r.point);
-		map.addOverlay(mk);
-		map.panTo(r.point);
-		alert('您的位置：'+r.point.lng+','+r.point.lat);
-	}
-	else {
-		alert('failed'+this.getStatus());
-	}        
-});
-
-</script>
+    <p>Etiam fermentum nisl in orci congue eleifend. Nulla quis blandit sapien, non rutrum ligula. Donec a viverra odio. Pellentesque efficitur vehicula convallis. In hac habitasse platea dictumst. Duis arcu leo, convallis ut felis ac, rhoncus convallis velit. Aenean non auctor dolor. Etiam lacinia elementum augue, vel accumsan eros aliquam mollis. In lorem velit, ullamcorper vel feugiat at, porta ut nulla. Suspendisse sollicitudin quis orci eu aliquet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut at ipsum imperdiet, aliquet mauris vel, tristique magna. Pellentesque ultrices pulvinar sem in tempor. Mauris massa lorem, elementum et quam nec, sagittis malesuada ante. Vivamus urna felis, pharetra non eros eget, tempus dictum sapien.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>  
 </html>
